@@ -1,0 +1,7 @@
+ExampleClass
+*-Swift.h
+*.o
+*.swiftdoc
+*.swiftmodule
+*.swiftsourceinfo
+hello
