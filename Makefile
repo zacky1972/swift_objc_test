@@ -13,7 +13,7 @@ ExampleClass-Swift.h: ExampleClass.swift
 	xcrun swiftc $< -emit-objc-header -emit-objc-header-path $@
 
 hello: main.o ExampleClass.o
-	xcrun swiftc $^ -o $@ -framework Foundation
+	xcrun clang $^ -o $@ -L`xcrun --show-sdk-path`/usr/lib/swift -undefined dynamic_lookup
 
 clean:
 	$(RM) hello *.o *.{swiftdoc,swiftmodule,swiftsourceinfo} ExampleClass ExampleClass-Swift.h
